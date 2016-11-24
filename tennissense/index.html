@@ -1,0 +1,515 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Sense | Performance Smartwatch App</title>
+    <meta name="author" content="Proprio Labs" />
+    <meta name="keywords" content="tennis, tennis swing, tennis app, tennis smart watch, tennis tracker, tennis analysis, mobile tennis, apps tennis, forehand, backhand, serve, volley, overhead, tennis coach, performance tracker, sensor, tracker, sense, performance, wearables, quantified self, tennis, accelerometer, gyroscope">
+    <meta name='description' content='Performance tracking smartwatch app for tennis players: Tennis Sense automatically tracks forehands, backhands, serves, score and more'>
+    <meta property="og:title" content="Tennis Sense | Performance Smartwatch App">
+    <meta property="og:site_name" content="Tennis Sense | Performance Smartwatch App">
+    <meta property="og:url" content="http://www.propriolabs.com">
+    <meta property="og:description" content="Performance tracking smartwatch app for tennis players: Tennis Sense automatically tracks forehands, backhands, serves, score and more">
+    <link rel="icon" type="/image/png" href="../img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="../css/main2.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '222729081419032');
+    fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=222729081419032&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+    <style>
+    .mdl-layout__header {
+        background-color: #000000;
+    }
+    
+    .app-content {
+        position: relative;
+        background: url('../img/tennisball.png') center top no-repeat;
+        background-size: cover;
+        height: 550px;
+        width: 100%;
+    }
+    
+    .logo-font {
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        line-height: 1;
+        color: #767777;
+        font-weight: 500;
+    }
+    
+    .app-slogan {
+        font-size: 60px;
+        padding-top: 160px;
+    }
+    
+    .app-sub-slogan {
+        font-size: 21px;
+        padding-top: 24px;
+    }
+    
+    .app-section {
+        position: relative;
+        background: url('../img/tennisball.png') center top no-repeat;
+        background-size: cover;
+        height: 550px;
+    }
+    
+    .app-band {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #37474f;
+        opacity: 0.8;
+    }
+    
+    .app-band-text {
+        max-width: 800px;
+        margin-left: 25%;
+        padding: 24px;
+        text-align: left;
+        color: white;
+    }
+    
+    .app-band-text p {
+        padding-top: 8px;
+    }
+    
+    .stats-content {
+        position: relative;
+        background: url('../img/stats.jpg') center top no-repeat;
+        background-size: cover;
+        height: 600px;
+        width: 100%;
+    }
+    
+    .stats-section {
+        position: relative;
+        background: url('../img/stats.jpg') center top no-repeat;
+        background-size: cover;
+        height: 600px;
+    }
+    
+    .stats-band {}
+    
+    .stats-band-text {
+        max-width: 400px;
+        padding: 24px;
+        text-align: left;
+        color: white;
+    }
+    
+    .stats-band-text p {
+        padding-top: 8px;
+    }
+    
+    .social-btn__twitter {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_white_24dp.png')
+    }
+    
+    .social-btn__linkedin {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_linkedin_white_24dp.png');
+        width: 22px;
+        height: 22px
+    }
+    
+    .social-btn__facebook {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_white_24dp.png')
+    }
+    
+    .social-btn__gram {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_instagram_white_24dp.png')
+    }
+    
+    .mdl-mini-footer ul {
+        color: #000000;
+        list-style-type: none;
+    }
+    
+    form {
+        width: 80%;
+        max-width: 400px;
+        margin: 4em auto;
+        padding: 3em 2em 2em 2em;
+        background: #fafafa;
+        border: 1px solid #ebebeb;
+        box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    }
+    
+    .group {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: #fafafa;
+        color: #636363;
+        width: 96%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+    }
+
+    .mdl-card__media > img {
+      max-width: 100%;
+      max-height:100%;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    /* Label */
+    
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: all 0.2s ease;
+    }
+    /* active */
+    
+    input:focus ~ label,
+    input.used ~ label {
+        top: -20px;
+        transform: scale(.75);
+        left: -2px;
+        /* font-size: 14px; */
+        color: #4a89dc;
+    }
+    /* Underline */
+    
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #4a89dc;
+        transition: all 0.2s ease;
+    }
+    
+    .bar:before {
+        left: 50%;
+    }
+    
+    .bar:after {
+        right: 50%;
+    }
+    /* active */
+    
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+        width: 50%;
+    }
+    /* Highlight */
+    
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active */
+    
+    input:focus ~ .highlight {
+        animation: inputHighlighter 0.3s ease;
+    }
+    /* Animations */
+    
+    @keyframes inputHighlighter {
+        from {
+            background: #4a89dc;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    
+    .img-circle {
+        border-radius: 50%;
+    }
+    /* Button */
+    
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 12px 24px;
+        margin: .3em 0 1em 0;
+        width: 100%;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        letter-spacing: 1px;
+        background: transparent;
+        border: 0;
+        background-color: #333;
+        border-bottom: 2px solid #3160B6;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+    
+    .button:focus {
+        outline: 0;
+    }
+    /* Button modifiers */
+    
+    .buttonBlue {
+        background: #8b99a5;
+        text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+    }
+    
+    .buttonBlue:hover {
+        background: #8b99a2;
+    }
+    /* Ripples container */
+    
+    .ripples {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+    }
+    /* Ripples circle */
+    
+    .ripplesCircle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .ripples.is-active .ripplesCircle {
+        animation: ripples .4s ease-in;
+    }
+    /* Ripples animation */
+    
+    @keyframes ripples {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        100% {
+            width: 200%;
+            padding-bottom: 200%;
+            opacity: 0;
+        }
+    }
+    </style>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"> <a href="/"><img class="logo" src="../img/logo.png" width=50px></a></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="/">Proprio Labs</a>
+                    <a class="mdl-navigation__link" href="#faq">FAQ</a>
+                    <a class="mdl-navigation__link" href="mailto:matt@propriolabs.com">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"> <a href="http://propriolabs.com"><img class="logo" src="../img/logo.png" width=50px></a></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="http://propriolabs.com">Proprio Labs</a>
+                <a class="mdl-navigation__link" href="#faq">FAQ</a>
+                <a class="mdl-navigation__link" href="mailto:matt@propriolabs.com">Contact</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="app-content mdl-layout__content">
+                    <div class="app-section">
+                        <div class="app-band">
+                            <div class="app-band-text">
+                                <div class="mdl-typography--display-2 mdl-typography--font-thin">Tennis Sense</div>
+                                <p class="mdl-typography--headline mdl-typography--font-thin">
+                                    activity tracker and tennis sensor that automatically tracks swings, rallies, and the score on your smartwatch
+                                </p>
+                                <p>
+                                    <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="https://play.google.com/store/apps/details?id=com.propriolabs.thetennissense" style="color:#00a6f5">
+                              Download Now in the Google Play Store&nbsp;<img src="../img/AndroidPS.png" height="50px">
+                            </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-content mdl-layout__content">
+                    <div class="stats-section">
+                        <div class="mdl-grid">
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-shadow--2dp" style="padding-top:100px;padding-right:50px">
+                                <iframe style="border: 2px solid #000;" width="400" height="315" src="https://www.youtube.com/embed/aec2uSkJTCI" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h1 class="mdl-card__title-text">Simple and Automatic</h1>
+                        </div>
+                        <figure class="mdl-card__media" style="background-color:white">
+                            <img src="../img/SmartWatch_TennisSense.png" height="225px" alt="" />
+                        </figure>
+                        <div class="mdl-card__supporting-text">
+                            <p>Simply wear your smartwatch while you play, and Tennis Sense will automatically track your stats.</p>
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h1 class="mdl-card__title-text">Key Metrics</h1>
+                        </div>
+                        <figure class="mdl-card__media" style="background-color:white">
+                            <img src="../img/Galaxy_with_Tennis_Sense.png" height="225px" style="background-color:white" alt="" />
+                        </figure>
+                        <div class="mdl-card__supporting-text">
+                            <p>Get feedback on forehands, backhands, serves, rallies, games, score, heartrate, and more.</p>
+                        </div>
+                    </div>
+                    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h1 class="mdl-card__title-text">Performance Tracking</h1>
+                        </div>
+                        <figure class="mdl-card__media" style="background-color:white">
+                            <img src="../img/consistency.png" height="225px" alt="" />
+                        </figure>
+                        <div class="mdl-card__supporting-text">
+                            <p>Track progress over time and compare stats with friends, teammates, and your coach </p>
+                        </div>
+                    </div>
+                </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col" style="padding: 0px 20px 0px 20px;">
+                    <a name="faq"></a>
+                    <h3>FAQ</h3>
+                    <p class="mdl-typography--headline">How do I download Tennis Sense?</p>
+                    <p class="mdl-typography--subhead mdl-typography--font">
+                        You can download Tennis Sense on the <a href="https://play.google.com/store/apps/details?id=com.propriolabs.thetennissense" style="color:#00a6f5"> Google Play Store</a>. You'll need an Android phone and Android Wear. We're working on a version for the Apple Watch, stay tuned!
+                    </p>
+                    <p class="mdl-typography--headline">What is Tennis Sense and what does it do?</p>
+                    <p class="mdl-typography--subhead mdl-typography--font">
+                        Tennis Sense is an activity tracker and tennis sensor app for your smartwatch. It tracks your performance while you play tennis. Specifically, Tennis Sense uses motion sensors to track your forehands, backhands, serves, and more. With the smartwatch's built-in microphone, Tennis Sense tracks the match score.
+                    </p>
+                    <p class="mdl-typography--headline">How does Tennis Sense help me improve my game?</p>
+                    <p class="mdl-typography--subhead mdl-typography--font">
+                        Tennis Sense generates statistics and visualizations every time you play tennis. Tennis Sense allows you to explore details about your tennis game that you have never had access to before. You'll start to answer questions like: What proportion of my strokes are forehands vs. backhands? How often am I double faulting? How long are my rallies? How do any of these questions change as I get tired? How do any of these questions change depending on whom I play against. With detailed data-driven insights into your game, you will be more aware on the court of your strengths and weaknesses.
+                    </p>
+                    <p class="mdl-typography--headline">What other features are coming for Tennis Sense?</p>
+                    <p class="mdl-typography--subhead mdl-typography--font">
+                        We are building in a social component, so you can share stats with friends, teammates, and your tennis coach. In the near future, we'll be adding local positioning analytics, so you know where on the court you hit your shot. Stay tuned!
+                    </p>
+                    <p class="mdl-typography--headline">What watches does Tennis Sense support?</p>
+                    <p class="mdl-typography--subhead mdl-typography--font">
+                        Tennis Sense is compatible with Android Wear devices with accelerometers, gyroscopes, and microphones. The majority of Tennis Sense users have either a Sony SmartWatch 3 or a Moto 360 Sport. The 1st generation Moto 360 is not supported because Motorola disabled the gyroscope with a software patch and is no longer maintaining it. We are working on an Apple Watch version, which will be ready in the near future.
+                    </p>
+                </div>
+            </div>
+            <footer class="docs-text-styling docs-footer mdl-mini-footer mdl-color--black-900" style="width:100%">
+                <ul>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://twitter.com/tennissense" class="social-btn social-btn__twitter" role="button" title="Twitter"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://facebook.com/thetennissense" class="social-btn social-btn__facebook" role="button" title="facebook"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://instagram.com/tennissense" class="social-btn social-btn__gram" role="button" title="Instagram"></a>
+                    </li>
+                </ul>
+           <ul>
+                    <li><a class="mdl-color-text--grey-600" href="" style="font-size:11px">&copy;Proprio Labs 2016</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="http://propriolabs.com/privacy.html" style="font-size:11px">Privacy Policy</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="http://propriolabs.com/terms-of-use.html" style="font-size:11px">Terms of Use</a></li>
+                </ul>
+            </footer>
+    </div>
+    </main>
+    </div>
+    <!-- Google Analytics Code -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60258097-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics Code -->
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proprio Labs</title>
+    <meta name="author" content="Proprio Labs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="smartwatch, performance tracker, sensor, tracker, sense, performance, wearables, quantified self, tennis, accelerometer, gyroscope, sports, athlete">
+    <meta name='description' content='Performance tracking for athletes wearing smartwatches; Proprio Labs applies machine learning to sensor data to track sport-specific metrics and provide real-time feedback'>
+    <meta property="og:title" content="Performance Activity Tracker | Sports on the Smartwatch">
+    <meta property="og:site_name" content="Performance Activity Tracker | Sports on the Smartwatch">
+    <meta property="og:url" content="http://www.propriolabs.com">
+    <meta property="og:description" content="Performance tracking for athletes wearing smartwatches; Proprio Labs applies machine learning to sensor data to track sport-specific metrics and provide real-time feedback">
+    <title>Proprio Labs</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-blue.min.css">
+    <link rel="stylesheet" href="css/main2.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '222729081419032');
+    fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=222729081419032&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+    <style>
+    .mdl-layout__header {
+        background-color: #000000;
+    }
+    
+    .app-content {
+        position: relative;
+        background: url('img/sensor.png') center top no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+    
+    .logo-font {
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        line-height: 1;
+        color: #767777;
+        font-weight: 500;
+    }
+    
+    .app-slogan {
+        font-size: 60px;
+        padding-top: 160px;
+    }
+    
+    .app-sub-slogan {
+        font-size: 21px;
+        padding-top: 24px;
+    }
+    
+    .app-section {
+        position: relative;
+        background: url('img/sensor.png') center top no-repeat;
+        background-size: cover;
+        height: 500px;
+    }
+    
+    .app-band {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        background-color: #37474f;
+        opacity: 0.8;
+    }
+    
+    .app-band-text {
+        padding: 24px;
+        color: white;
+    }
+    
+    .app-band-text p {
+        padding-top: 8px;
+    }
+    
+    .stats-content {
+        position: relative;
+        background: url('img/randomwalk2.png') center top no-repeat;
+        background-size: cover;
+        height: 400px;
+        width: 100%;
+    }
+    
+    .stats-section {
+        position: relative;
+        background: url('img/randomwalk2.png') center top no-repeat;
+        background-size: cover;
+        height: 400px;
+    }
+    
+    .stats-band {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #37474f;
+        opacity: 0.8;
+    }
+    
+    .stats-band-text {
+        max-width: 800px;
+        margin-left: 25%;
+        padding: 24px;
+        text-align: left;
+        color: white;
+    }
+    
+    .stats-band-text p {
+        padding-top: 8px;
+    }
+    
+    .social-btn__twitter {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_white_24dp.png')
+    }
+    
+    .social-btn__linkedin {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_linkedin_white_24dp.png');
+        width: 22px;
+        height: 22px
+    }
+    
+    .social-btn__facebook {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_white_24dp.png')
+    }
+    
+    .social-btn__gram {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_instagram_white_24dp.png')
+    }
+    
+    .mdl-mini-footer ul {
+        color: #000000;
+        list-style-type: none;
+    }
+    
+    form {
+        width: 380px;
+        margin: 4em auto;
+        padding: 3em 2em 2em 2em;
+        background: #fafafa;
+        border: 1px solid #ebebeb;
+        box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    }
+    
+    .group {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: #fafafa;
+        color: #636363;
+        width: 96%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    /* Label */
+    
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: all 0.2s ease;
+    }
+    /* active */
+    
+    input:focus ~ label,
+    input.used ~ label {
+        top: -20px;
+        transform: scale(.75);
+        left: -2px;
+        /* font-size: 14px; */
+        color: #4a89dc;
+    }
+    /* Underline */
+    
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #4a89dc;
+        transition: all 0.2s ease;
+    }
+    
+    .bar:before {
+        left: 50%;
+    }
+    
+    .bar:after {
+        right: 50%;
+    }
+    /* active */
+    
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+        width: 50%;
+    }
+    /* Highlight */
+    
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active */
+    
+    input:focus ~ .highlight {
+        animation: inputHighlighter 0.3s ease;
+    }
+    /* Animations */
+    
+    @keyframes inputHighlighter {
+        from {
+            background: #4a89dc;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    /*Button*/
+    
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 12px 24px;
+        margin: .3em 0 1em 0;
+        width: 100%;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        letter-spacing: 1px;
+        background: transparent;
+        background-color: #333;
+        border: 0;
+        border-bottom: 2px solid #00a6f5;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+    
+    .button:focus {
+        outline: 0;
+    }
+    /* Button modifiers */
+    
+    .buttonBlue {
+        background: #8b99a5;
+        text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+    }
+    
+    .buttonBlue:hover {
+        background: #8b99a2;
+    }
+    /* Ripples container */
+    
+    .ripples {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+    }
+    /* Ripples circle */
+    
+    .ripplesCircle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .ripples.is-active .ripplesCircle {
+        animation: ripples .4s ease-in;
+    }
+    /* Ripples animation */
+    
+    @keyframes ripples {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        100% {
+            width: 200%;
+            padding-bottom: 200%;
+            opacity: 0;
+        }
+    }
+    </style>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"> <a href="http://propriolabs.com"><img class="logo" src="img/logo.png" width=50px></a></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="/">Proprio Labs</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"> <a href="http://propriolabs.com"><img class="logo" src="img/logo.png" width=50px></a></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="/">Proprio Labs</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="container-fluid main-content-wrap static-content" id="privacy">
+                <div class="container">
+                    <div class="row">
+                        <div style="margin-left:45px">
+                            <div class="well well-lg static-content-wrap">
+                                <h2 class="no-margin-top">Terms of Use</h2>
+                                <hr>
+                                <p>The following terms and conditions ("Terms of Service") govern your access to, and use of, the propriolabs.com website (the “Service”) and Tennis Sense and all Proprio Labs' mobile apps (the "Service") operated by Proprio Labs, Inc. ("Proprio Labs").</p>
+                                <p>By clicking on the "Accept" checkbox or by accessing, browsing, or otherwise using the site, you agree to be bound by this terms of service and any of the related policies or guidelines, including any subsequent changes or modifications to them. If you do not agree to this terms of service or any changes, do not access or otherwise continue to use the site and mobile app.</p>
+                                <h4><strong>Other Applicable Terms</strong></h4>
+                                <p>Privacy. Refer to Proprio Labs Privacy Policy to understand how Proprio Labs collects, uses and discloses your personal information. The Service is intended for audience age 13 and above.</p>
+                                <p>Conduct Policy. You agree to the terms of Proprio Labs Conduct Policy related to your use of the Service, including your submission of any data, text, photographs, graphics, messages, ratings, forum postings, comments or other materials (collectively, "User Content"). The Conduct Policy is located at the end of, and is a part of, this Terms of Service.</p>
+                                <h4><strong>Copyright and License</strong></h4>
+                                <p>All copyrighted and copyrightable materials on the Service, including but not limited to the text, design, product information, graphics, images, pictures, sound and other files, and the selection, compilation and arrangement thereof (collectively, "Materials") are ALL RIGHTS RESERVED Copyright © Proprio Labs, Inc., and/or its licensors.</p>
+                                <p>Proprio Labs grants you a limited license to make personal use of the Service to access and review the Materials for your information purposes only. This license does not include the right to: (a) use the Service or Materials for other than for its intended purpose, including but not limited to any marketing, selling, or other commercial uses; (b) use framing techniques to enclose any portion of the Service, including any images found on the Service or any text or the layout or design of any page or form contained on a page; (c) publish, publicly perform or display, or distribute to any third party any Materials, including reproduction or hosting the Materials on any computer network or broadcast or publications media; (d) make derivative uses of the Service or the Materials; or (e) any systematic collection or extraction of data through the use of any data mining, robots or similar data gathering or extraction methods.</p>
+                                <p>You are not conveyed any other right or license, by implication, estoppel or otherwise, in or under any patent, trademark, or proprietary right of Proprio Labs or any third party. Any unauthorized use of the Service will terminate the permission or license granted by Proprio Labsto you under this Terms of Service and may violate applicable law, including but not limited to copyright laws, trademark laws (including trade dress), and communications regulations and statutes.</p>
+                                <h4><strong>Your Liability</strong></h4>
+                                <p>You are solely responsible for your activities on our Service, including all content that you submit or a third party submits on your behalf or using your account. You agree to indemnify Proprio Labs, Inc. and its shareholders, directors, officers, employees, agents, successors and assigns against any and all third party claims, actions, demands, suits and all related losses, liabilities, damages, penalties, costs and expenses (including, but not limited to, reasonable attorneys' fees) incurred by an indemnified party arising out of or related to: (a) any violation of law or regulation from your use of the Service, (b) any actual or alleged breach by you of any obligations, representations, warranties under this Terms of Service, including violations of our Conduct Policy; and (c) any actual or alleged infringement or misappropriation of the intellectual property rights of any third party by all User Content that you submit or a third party submits on your behalf or using your account.</p>
+                                <h4><strong>Trademarks and Service Marks</strong></h4>
+                                <p>"Proprio Labs," “propriolabs.com”, “Tennis Sense” and Proprio Labs' logos are trademarks, service marks or registered trademarks of Proprio Labs, Inc. or its suppliers and licensors, and may not be copied, used or imitated, in whole or in part, without the prior written permission of Proprio Labs or its suppliers or licensors. You may not use meta tags or any other "hidden text" using any of the above-referenced marks without Proprio Labs permission. Additionally, all page headers, graphics, icons, and scripts are service marks, trademarks, and/or trade dress of Proprio Labs, and may not be copied, imitated, or used, in whole or in part, without Proprio Labs' prior written permission. All other Proprio Labs' names or logos mentioned on the Service, or any other trademarks, registered or otherwise, are the property of their respective owners. Reference to any products, services, processes or other information, by trade name, trademark, manufacturer, supplier or otherwise does not constitute or imply endorsement, sponsorship or recommendation thereof by Proprio Labs.</p>
+                                <h4><strong>Links and Third Party Content</strong></h4>
+                                <p>Proprio Labs or third parties may provide links on the Service to other sites or content. Proprio Labs has no control over such sites or content, and therefore makes no claim or representation regarding, and expressly disclaims responsibility for, the quality, content, nature or reliability of sites or content linked to by the Service. Proprio Labs provides links to you only as a convenience, and the inclusion of any link on the Service does not imply our affiliation, endorsement, or adoption of the linked site or any information therein. When you leave the Service, our terms and policies no longer govern. You should review applicable terms and policies, including the privacy and data gathering practices, of any third-party sites.</a>
+                                </p>
+                                <h4><strong>No Warranties</strong></h4>
+                                <p>The site and the materials contained therein are provided on an "as is" and "as available" basis without warranties of any kind, express or implied. You expressly agree that use of the site, including all content or data distributed by or downloaded or accessed from or through the site, is at your sole risk. Proprio Labs disclaims all warranties, express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title and non-infringement as to the information, materials, and content on the site. Proprio Labs does not represent or warrant that materials in the site are accurate, complete, current, reliable or error-free.</p>
+                                <p>Proprio Labs is not responsible for typographical errors or omissions relating to pricing, text or photography. We cannot and do not represent or warrant that the site or its server(s) are free of viruses or other harmful components, including content that is posted by third parties. You should use industry-recognized software to detect and disinfect viruses from any download.</p>
+                                <h4><strong>Limited Liability</strong></h4>
+                                <p>In no event shall we be liable for any indirect, special, incidental, consequential or punitive damages (including but not limited to loss of use, loss of profits, or loss of data) whether in an action in contract, tort (including but not limited to negligence), equity or otherwise, arising out of or in any way connected with the use of or inability to use this site or the materials therein or resulting from unauthorized access to or alteration of data.</p>
+                                <p>You agree that Proprio Labs aggregate liability for any actual and direct damages hereunder shall not exceed the amounts you paid to Proprio Labs. You acknowledge that this is a reasonable allocation of risk for your use of the site.</p>
+                                <p>Some jurisdictions do not allow the limitation or exclusion of certain warranties, conditions or damages, so some of the above exclusions may not apply to you.</p>
+                                <h4><strong>Applicable Law and Venue</strong></h4>
+                                <p>This Terms of Service and any transactions on this Service shall be governed by and construed in accordance with the laws of the State of California applicable to agreements made and entirely to be performed within the State of California, without resort to its conflict of law provisions. You agree that any action at law or in equity arising out of or relating to these terms and conditions shall be filed only in state or federal court located in Orange County, California, and you hereby irrevocably and unconditionally consent and submit to the exclusive jurisdiction of such courts over any suit, action or proceeding arising out of this Terms of Service.</p>
+                                <h4><strong>Changes to This Terms of Service</strong></h4>
+                                <p>Proprio Labs reserves the right to change or modify any of the terms and conditions contained in this Terms of Service, or any policy of the Service, at any time and in its sole discretion. If Proprio Labs decides to change this Terms of Service, it will post a new version on the Service and update the effective date set forth above. Any changes or modifications to this Terms of Service or policy will be effective upon posting of the revisions. Your continued use of the Service following posting of any changes or modifications constitutes your acceptance of such changes or modifications. You should frequently review this Terms of Service and any other applicable policies, including their dates, to understand the terms and conditions that apply.</p>
+                                <p>Proprio Labs reserves the right at any time and from time to time to modify or discontinue, temporarily, or permanently the Service (or any part thereof) with or without notice. Proprio Labs shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Service.</p>
+                                <h4><strong>Conduct Policy</strong></h4>
+                                <p>Please read this Conduct Policy carefully. It governs your conduct while using Proprio Labs' mobile apps, various services on this Web site, located at propriolabs.com (the “Service”), and operated by Proprio Labs, Inc. ("Proprio Labs"). By using our Service, you agree to be bound the terms of this Conduct Policy.</p>
+                                <p>Any violation of this policy may result in the suspension or termination of your access to the site or use of our service and such action as we deem appropriate. Indirect or attempted violations of this policy, and actual or attempted violations by a third party on your behalf, shall be considered violations of the policy by you.</p>
+                                <h4><strong>Prohibited Conduct</strong></h4>
+                                <p>The following non-exhaustive list describes the kinds of illegal or harmful conduct that are prohibited on our Service.</p>
+                                <ul>
+                                    <li>You agree not to upload, post or otherwise transmit any data that is unlawful, harmful, threatening, abusive, harassing, tortuous, defamatory, vulgar, obscene, libelous, known to be false and presented as truth, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable;</li>
+                                    <li>You agree not to upload, post or otherwise transmit any data that you do not have a right to transmit under any law or under contractual or fiduciary relationships (such as, but not limited to, inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure Codes).</li>
+                                    <li>You agree not to upload, post or otherwise transmit any data that contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;</li>
+                                    <li>You agree not to upload, post or otherwise transmit any data that potentially infringes any patent, trademark, trade secret, copyright or other proprietary rights of any person or entity; or</li>
+                                    <li>You agree not to upload, post or otherwise transmit any data that is unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation.</li>
+                                    <li>You agree not to use an account name, file or directory name, or third level domain (i.e., aaa.propriolabs.com), or other identifier that infringes or misappropriates any trademark, service mark or other indicia of origin or that is otherwise likely to cause confusion as to the source, affiliation, sponsorship or endorsement of a third party's products or services;</li>
+                                    <li> You agree not to attempt to disguise the origin of any User Content transmitted to the Service;</li>
+                                    <li> You agree not to act in any manner that negatively affects other users' ability to use the Service;</li>
+                                    <li>You agree not to impersonate any person or entity, including, without limitation, a manufacturer or owner of any product, or falsely state or otherwise misrepresent your affiliation with a person or entity;</li>
+                                    <li> You agree not to interfere with the Service, or servers or networks connected to the Service, or disobey any requirements, procedures, policies or regulations of networks connected to the Service;</li>
+                                    <li>You agree not to post content that would be harmful to members of network in any manner;</li>
+                                </ul>
+                                <h4><strong>System and Network Security</strong></h4>
+                                <p>You are prohibited from violating the security of any system or network comprising the Service. Such violations may result in criminal and civil liability. Examples of system or network security violations include, without limitation, the following:</p>
+                                <ul>
+                                    <li> Unauthorized access to or use of data, systems or networks, including any attempt to probe, scan or test the vulnerability of the Service or to breach security or authentication measures.</li>
+                                    <li>Unauthorized monitoring of data or traffic on the Service.</li>
+                                    <li> Interference with the Service including, without limitation, any type of flooding technique or deliberate attempt to overload a system such as denial of service attacks.</li>
+                                    <li>Forging of any packet header, e-mail header or any part of a message header. This prohibition does not include the use of aliases or anonymous remailers.</li>
+                                    <li>Using manual or electronic means to avoid any use or access limitations placed on this Service.</li>
+                                </ul>
+                                <h4><strong>Enforcement</strong></h4>
+                                <p>Notwithstanding anything to the contrary in this Conduct Policy, Proprio Labs reserves the right, but does not assume the obligation, to investigate any violation of this Conduct Policy or any other misuse of the Service or its systems, equipment or network. Proprio Labs further reserves the right (each in its sole discretion) to screen, edit, modify, remove or disable access to any content that violates these provisions or that Proprio Labs deems objectionable. Without imitating the foregoing, and notwithstanding anything contrary in our Privacy Policy, Proprio Labs reserves the right to report any activity, data or persons (including the disclosure of relevant user information) to appropriate law enforcement officials, regulators, or other appropriate third parties if Proprio Labs suspects you have violated this Conduct Policy or any law or regulation. Proprio Labs also may cooperate with appropriate law enforcement agencies to assist in the investigation and prosecution of any illegal conduct.</p>
+                                <p>If you want to report any violations of this Conduct Policy, please contact us at: <a href="mailto:matt@propriolabs.com">matt@propriolabs.com</a></p>
+                                <h4><strong>General Terms; Repeater Infringer Policy</strong></h4>
+                                <p>We reserve the right, without notice and in our sole discretion, to terminate your account and your license to use the Service and to block or prevent future access to and use of the Service. Without limiting the foregoing, and in accordance with the Digital Millennium Copyright Act (DMCA), it is Proprio Labs policy to terminate, in appropriate circumstances as determined in our sole discretion, subscribers or account holders who we determine are repeat infringers. If any provision of this Terms of Service shall be deemed unlawful, void, or for any reason unenforceable, then that provision shall be deemed severable from this Terms of Service and shall not affect the validity and enforceability of any remaining provisions. If you believe your copyright has been violated by material uploaded by a user of Proprio Labs, please contact us at <a href="mailto:matt@propriolabs.com">matt@propriolabs.com</a></p>
+                                <h4><strong>Violations of the Acceptable Use Policy</strong></h4>
+                                <p>We encourage you to report violations of this Acceptable Use Policy to Proprio Labs immediately. If you have a question about whether a type of transaction may violate the Acceptable Use Policy, you can email Proprio Labs at <a href="mailto:matt@propriolabs.com">matt@propriolabs.com</a></p>
+                            </div>
+                            <!-- .well -->
+                        </div>
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .container-fluid.static-content -->
+            <footer class="docs-text-styling docs-footer mdl-mini-footer mdl-color--black-900">
+                <ul>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://twitter.com/propriolabs" class="social-btn social-btn__twitter" role="button" title="Twitter"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://www.linkedin.com/company/proprio-labs" class="social-btn social-btn__linkedin" role="button" title="Linkedin"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://facebook.com/thetennissense" class="social-btn social-btn__facebook" role="button" title="facebook"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://instagram.com/tennissense" class="social-btn social-btn__gram" role="button" title="Instagram"></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a class="mdl-color-text--grey-600" href="">&copy;Proprio Labs 2016</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="privacy.html">Privacy Policy</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="terms-of-use.html">Terms of Use</a></li>
+                </ul>
+            </footer>
+    </div>
+    </main>
+    </div>
+    <!-- Google Analytics Code -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60258097-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics Code -->
+    <script>
+    < /body> < /html >

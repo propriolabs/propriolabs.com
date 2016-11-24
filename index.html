@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Proprio Labs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="smartwatch, performance tracker, sensor, tracker, sense, performance, wearables, quantified self, tennis, accelerometer, gyroscope, sports, athlete">
+    <meta name='description' content='Performance tracking for athletes wearing smartwatches; Proprio Labs applies machine learning to sensor data to track sport-specific metrics and provide real-time feedback'>
+    <meta property="og:title" content="Performance Activity Tracker | Sports on the Smartwatch">
+    <meta property="og:site_name" content="Performance Activity Tracker | Sports on the Smartwatch">
+    <meta property="og:url" content="http://www.propriolabs.com">
+    <meta property="og:description" content="Performance tracking for athletes wearing smartwatches; Proprio Labs applies machine learning to sensor data to track sport-specific metrics and provide real-time feedback">
+    <title>Proprio Labs | Performance Activity Tracking on Smartwatches </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="icon" type="/image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/main2.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+    ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '222729081419032');
+    fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=222729081419032&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+    <style>
+    .mdl-layout__header {
+        background-color: #000000;
+    }
+    
+    .app-content {
+        position: relative;
+        background: url('img/sensor.png') center top no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+    }
+    
+    .logo-font {
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        line-height: 1;
+        color: #767777;
+        font-weight: 500;
+    }
+    
+    .app-slogan {
+        font-size: 60px;
+        padding-top: 160px;
+    }
+    
+    .app-sub-slogan {
+        font-size: 21px;
+        padding-top: 24px;
+    }
+    
+    .app-section {
+        position: relative;
+        background: url('img/sensor.png') center top no-repeat;
+        background-size: cover;
+        height: 500px;
+    }
+    
+    .app-band {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        background-color: #37474f;
+        opacity: 0.8;
+    }
+    
+    .app-band-text {
+        padding: 24px;
+        color: white;
+    }
+    
+    .app-band-text p {
+        padding-top: 8px;
+    }
+    
+    .stats-content {
+        position: relative;
+        background: url('img/randomwalk2.png') center top no-repeat;
+        background-size: cover;
+        height: 400px;
+        width: 100%;
+    }
+    
+    .stats-section {
+        position: relative;
+        background: url('img/randomwalk2.png') center top no-repeat;
+        background-size: cover;
+        height: 400px;
+    }
+    
+    .stats-band {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #37474f;
+        opacity: 0.8;
+    }
+    
+    .stats-band-text {
+        max-width: 800px;
+        margin-left: 25%;
+        padding: 24px;
+        text-align: left;
+        color: white;
+    }
+    
+    .stats-band-text p {
+        padding-top: 8px;
+    }
+    
+    .social-btn__twitter {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_white_24dp.png')
+    }
+    
+    .social-btn__linkedin {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_linkedin_white_24dp.png');
+        width: 22px;
+        height: 22px
+    }
+    
+    .social-btn__facebook {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_white_24dp.png')
+    }
+    
+    .social-btn__gram {
+        background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_instagram_white_24dp.png')
+    }
+    
+    .mdl-mini-footer ul {
+        color: #000000;
+        list-style-type: none;
+    }
+    
+    form {
+        width: 80%;
+        max-width: 400px;
+        margin: 2em auto;
+        padding: 3em 2em 2em 2em;
+        background: #fafafa;
+        border: 1px solid #ebebeb;
+        box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    }
+    
+    .group {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: #fafafa;
+        color: #636363;
+        width: 96%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #757575;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    /* Label */
+    
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: all 0.2s ease;
+    }
+    /* active */
+    
+    input:focus ~ label,
+    input.used ~ label {
+        top: -20px;
+        transform: scale(.75);
+        left: -2px;
+        /* font-size: 14px; */
+        color: #4a89dc;
+    }
+    /* Underline */
+    
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: #4a89dc;
+        transition: all 0.2s ease;
+    }
+    
+    .bar:before {
+        left: 50%;
+    }
+    
+    .bar:after {
+        right: 50%;
+    }
+    /* active */
+    
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+        width: 50%;
+    }
+    /* Highlight */
+    
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    /* active */
+    
+    input:focus ~ .highlight {
+        animation: inputHighlighter 0.3s ease;
+    }
+    /* Animations */
+    
+    @keyframes inputHighlighter {
+        from {
+            background: #4a89dc;
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    /*Button*/
+    
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 12px 24px;
+        margin: .3em 0 1em 0;
+        width: 100%;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+        letter-spacing: 1px;
+        background: transparent;
+        background-color: #333;
+        border: 0;
+        border-bottom: 2px solid #00a6f5;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+    
+    .button:focus {
+        outline: 0;
+    }
+    /* Button modifiers */
+    
+    .buttonBlue {
+        background: #8b99a5;
+        text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+    }
+    
+    .buttonBlue:hover {
+        background: #8b99a2;
+    }
+    /* Ripples container */
+    
+    .ripples {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+    }
+    /* Ripples circle */
+    
+    .ripplesCircle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .ripples.is-active .ripplesCircle {
+        animation: ripples .4s ease-in;
+    }
+    /* Ripples animation */
+    
+    @keyframes ripples {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        100% {
+            width: 200%;
+            padding-bottom: 200%;
+            opacity: 0;
+        }
+    }
+    </style>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"> <a href="/"><img class="logo" src="img/logo.png" width=50px></a></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="/">Proprio Labs</a>
+                    <a class="mdl-navigation__link" href="#products">X-Sense</a>
+                    <a class="mdl-navigation__link" href="https://blog.propriolabs.com/">Blog</a>
+                    <a class="mdl-navigation__link" href="#info">Info</a>
+                    <a class="mdl-navigation__link" href="mailto:matt@propriolabs.com">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title"> <a href="/"><img class="logo" src="img/logo.png" width=50px></a></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="/">Proprio Labs</a>
+                <a class="mdl-navigation__link" href="#products">X-Sense</a>
+                <a class="mdl-navigation__link" href="/tennissense">Tennis Sense</a>
+                <a class="mdl-navigation__link" href="https://blog.propriolabs.com/">Blog</a>
+                <a class="mdl-navigation__link" href="#info">Info</a>
+                <a class="mdl-navigation__link" href="mailto:matt@propriolabs.com">Contact</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="stats-content mdl-layout__content">
+                    <div class="stats-section">
+                        <img class=logo src="img/logo.png" style="position: absolute; 
+            left: 0px; 
+            right:0px;
+            top:0px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
+            width: 300px;"> Proprio Labs
+                    </div>
+                </div>
+                <div>
+                    <section class="section-center">
+                        <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">Proprio Labs</h1>
+                            </div>
+                            <div class="about-section mdl-card__supporting-text">
+                                <div class="mdl-typography--subhead">
+                                    Proprio is short for proprioception, humans' unconscious perception of movement and spatial orientation of the body. Proprio Labs is developing a platform to transform sensor data from wearable devices into performance metrics. Our goal is to provide the opportunity for anyone from an amateur athletes to a physical therapy patient to quantitatively track his or her performance with meaningful metrics.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="app-content mdl-layout__content">
+                        <a name="products"></a>
+                        <div class="app-section">
+                            <div class="app-band">
+                                <div class="app-band-text">
+                                    <h1 class="mdl-card__title-text">X-Sense</h1>
+                                    <br>
+                                    <div class="mdl-typography--subhead">
+                                        X-Sense refers to our upcoming line of performance tracking products. We are building general software for the Apple Watch, Android Wear, and other IoT devices, and we are developing specific machine learning algorithms to identify metrics relevant to each sport. Our first product focuses on tennis performance metrics, and we'll have more to come soon!
+                                        <br>
+                                        <br> Learn more about <a href="tennissense" style="color:#00a6f5">Tennis Sense</a> or download Tennis Sense now from the <a href="https://play.google.com/store/apps/details?id=com.propriolabs.thetennissense" style="color:#00a6f5"> Google Play Store. </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdl-cell mdl-cell--3-col">
+                    <!-- this is just dummy columns -->
+                </div>
+            </div>
+            <footer class="docs-text-styling docs-footer mdl-mini-footer mdl-color--black-900" style="width:100%">
+                <ul>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://twitter.com/propriolabs" class="social-btn social-btn__twitter" role="button" title="Twitter"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://www.linkedin.com/company/proprio-labs" class="social-btn social-btn__linkedin" role="button" title="Linkedin"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://facebook.com/thetennissense" class="social-btn social-btn__facebook" role="button" title="facebook"></a>
+                    </li>
+                    <li class="mdl-mini-footer--social-btn">
+                        <a href="https://instagram.com/tennissense" class="social-btn social-btn__gram" role="button" title="Instagram"></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a class="mdl-color-text--grey-600" href="" style="font-size:11px">&copy;Proprio Labs 2016</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="privacy.html" style="font-size:11px">Privacy Policy</a></li>
+                    <li><a class="mdl-color-text--grey-600" href="terms-of-use.html" style="font-size:11px">Terms of Use</a></li>
+                </ul>
+            </footer>
+    </div>
+    </main>
+    </div>
+    <!-- Google Analytics Code -->
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60258097-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics Code -->
+    <!-- 
+Copyright (c) 2016 by Ian Haggerty (http://codepen.io/IanH/pen/oxhFm)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+</body>
+
+</html>

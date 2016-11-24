@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url> 
+    <loc>http://propriolabs.com</loc> 
+  </url>
+  <url> 
+    <loc>http://propriolabs.com/tennissense</loc> 
+    <image:image>
+       <image:loc>http://propriolabs.com/img/SmartWatch_TennisSense.png</image:loc>
+       <image:caption>Tennis Sense on Sony Smartwatch 3</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://propriolabs.com/img/stats.jpg</image:loc>
+       <image:caption>Android on Tennis Court</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://propriolabs.com/img/Galaxy_with_Tennis_Sense.png</image:loc>
+       <image:caption>Tennis Sense on Samsung Galaxy</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://propriolabs.com/img/consistency.png</image:loc>
+       <image:caption>Shot Consistency</image:caption>
+    </image:image>
+    <video:video>
+      <video:content_loc>
+        https://www.youtube.com/embed/aec2uSkJTCI
+      </video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">
+        https://www.youtube.com/embed/aec2uSkJTCI
+      </video:player_loc>
+      <video:thumbnail_loc>
+        https://www.youtube.com/embed/aec2uSkJTCI
+      </video:thumbnail_loc>
+      <video:title>Tennis Sense - Demo</video:title>  
+      <video:description>
+        Improve your tennis game with this smartwatch performance tracker
+      </video:description>
+    </video:video>
+  </url>
+  <url> 
+    <loc>http://blog.propriolabs.com</loc> 
+  </url>
+  <url> 
+    <loc>http://propriolabs.com/privacy.html</loc> 
+  </url>
+  <url> 
+    <loc>http://propriolabs.com/terms-of-use.html</loc> 
+  </url>
+</urlset>
+
+
